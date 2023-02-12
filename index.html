@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <img src="hearts-removebg.png">
+<div>
+    <h1>Will you be my Valentine?</h1>
+    <button id="yesButton">Yes</button>
+    <button id="no">No</button>
+</div>
+<div id="message" style="display: none;">
+    <img src="image.png" alt="Image">
+    <h2>I love you too! Happy Valentine's Day! &#128525;</h2>
+</div>
+<style>
+    body {
+background-color: red; /* For browsers that do not support gradients */
+background-image: linear-gradient(to bottom right, rgb(219, 66, 104), rgb(214, 23, 141));
+}
+img{
+float: right;
+margin: 10px;
+
+
+    }
+    div{
+        text-align: center;
+        vertical-align: middle;
+        padding: 400px;
+    }
+    h1{
+        color: rgb(2, 247, 194);
+    
+    }
+    button {
+    font-size: 20px;
+    background-color: rgb(2, 247, 194);
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    }
+    #no{
+        position: absolute;
+    }
+    h3{
+        position: absolute;
+        display: none;
+    }
+</style>
+<script>
+    
+    document.getElementById("yesButton").addEventListener("click",function() {
+    document.getElementById("message").style.display = "block";
+    alert("Thank you! See you soon <3");
+})
+    var b = document.getElementById("no")
+    b.addEventListener("click",change);
+    function change()   {
+        var i = Math.floor(Math.random()*1000)+1;
+        var j = Math.floor(Math.random()*700)+1;
+        b.style.left = i+"px";
+        b.style.top = j+"px";
+        var message = document.createElement("h3");
+        message.innerHTML = "NO pa rin ba? &#128540;";
+        message.style.left = i+20+"px";
+        message.style.top = j+20+"px";
+        message.style.display = "block";
+        document.body.appendChild(message);
+    }
+</script>
+</body>
+</html>
